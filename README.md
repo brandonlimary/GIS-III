@@ -60,6 +60,10 @@ Below I define my four variables and their respective source:
 
 ## Results (if a Dashboard, insert screenshots of key selections)
 
+![Median Income](https://user-images.githubusercontent.com/74623945/170792854-551ae605-3314-45c0-8bc5-7333ca6f2aec.png)
+![Race](https://user-images.githubusercontent.com/74623945/170792866-433193b9-f661-4d53-b808-3408f67fdf36.png)
+![Grocery Stores](https://user-images.githubusercontent.com/74623945/170792880-0b95a04c-5f2a-44c1-a46d-d660420031ed.png)
+![Vacant Lots](https://user-images.githubusercontent.com/74623945/170792888-4be7ac4a-fcef-4be3-8ab9-1a2006210e4b.png)
 
 
 ## Discussion of Results/Findings/Main Highlights
