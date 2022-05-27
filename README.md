@@ -56,15 +56,28 @@ Below I define my four variables and their respective source:
     
 ## Methods Used (be explicit) 
 
+### Data Wrangling
+I primarily wrangled my data using RStudio (code provided in file titled 'code') 
 
+### Data Visualizations
+To visualize the data, I loaded my cleaned data into QGIS as shapefiles. 
 
 ## Results (if a Dashboard, insert screenshots of key selections)
 
+### Median Income
 ![Median Income](https://user-images.githubusercontent.com/74623945/170792854-551ae605-3314-45c0-8bc5-7333ca6f2aec.png)
+
+### Race
 ![Race](https://user-images.githubusercontent.com/74623945/170792866-433193b9-f661-4d53-b808-3408f67fdf36.png)
+
+### Grocery Stores
 ![Grocery Stores](https://user-images.githubusercontent.com/74623945/170792880-0b95a04c-5f2a-44c1-a46d-d660420031ed.png)
+
+### Vacant Lots
 ![Vacant Lots](https://user-images.githubusercontent.com/74623945/170792888-4be7ac4a-fcef-4be3-8ab9-1a2006210e4b.png)
 
-
 ## Discussion of Results/Findings/Main Highlights
+The series of maps provided above highlight the 
+
 ## Limitations, Future Work, Conclusion
+Despite utilizing the most up-to-date data, the accuracy of the data itself will not be 100% with reality. 
