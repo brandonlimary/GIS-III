@@ -46,13 +46,13 @@ up-to-date data into my project.
 
 Below I define my four variables and their respective source:
   1. Income: Median household income by census tract, 2020
-    a. From US Census 2020
+    a. From US Census 2020, extracted from [NHGIS Data Finder]([url](https://data2.nhgis.org/downloads))
   2. Racial composition: % non-Hispanic Black, 2020
-    a. From US Census 2020
+    a. From US Census 2020, extracted from [NHGIS Data Finder]([url](https://data2.nhgis.org/downloads))
   3. Vacant lot density: City-owned land inventory, 2020
-    a. From Chicago Data Portal
+    a. [From Chicago Data Portal]([url](https://data.cityofchicago.org/Community-Economic-Development/City-Owned-Land-Inventory/aksk-kvfp))
 4. Grocery story density: Grocery stores, 2013
-    a. From Chicago Data Portal
+    a. [From Chicago Data Portal]([url](https://data.cityofchicago.org/Health-Human-Services/Grocery-Store-Status/3e26-zek2))
     
 ## Methods Used (be explicit) 
 
