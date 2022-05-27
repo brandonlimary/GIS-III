@@ -51,16 +51,33 @@ Below I define my four variables and their respective source:
     a. From US Census 2020, extracted from [NHGIS Data Finder]([url](https://data2.nhgis.org/downloads))
   3. Vacant lot density: City-owned land inventory, 2020
     a. [From Chicago Data Portal]([url](https://data.cityofchicago.org/Community-Economic-Development/City-Owned-Land-Inventory/aksk-kvfp))
-4. Grocery story density: Grocery stores, 2013
+  4. Grocery store density: Grocery stores, 2013
     a. [From Chicago Data Portal]([url](https://data.cityofchicago.org/Health-Human-Services/Grocery-Store-Status/3e26-zek2))
+  5. Census tract shapefile
+    a. [From NHGIS Data Finder]([url](https://data2.nhgis.org/downloads))
+  6. Community area boundaries
+    a. [From Chicago Data Portal]([url](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6))
     
-## Methods Used (be explicit) 
+## Methods Used (be explicit)
+For this project, my process can be broken into two parts: data wrangling and data visualization.
 
 ### Data Wrangling
-I primarily wrangled my data using RStudio (code provided in file titled 'code') 
+I primarily wrangled my data using RStudio (code provided in file titled 'code'). Each variable has its method listed below.
+
+#### Median Income
+For median income, I first loaded the data into R (I downloaded the data onto my local machine). 
+
+#### Racial Composition
+For racial composition, I first loaded the data into R (I downloaded the data onto my local machine).
+
+#### Vacant Lot Density
+For vacant lot density, I first loaded the data into R (I downloaded the data through the Chicago Data Portal SODA API). 
+
+#### Grocery Store Density
+For grocery store density, I first loaded the data into R (I downloaded the data through the Chicago Data Portal SODA API). The data was in the form of a CSV file with location data stored in a column titled 'Location'. 
 
 ### Data Visualizations
-To visualize the data, I loaded my cleaned data into QGIS as shapefiles. 
+To visualize the data, I loaded my cleaned data into QGIS as shapefiles. Each variable had its own stylizing layer in QGIS. The basemap, census tract shapefile, and community area boundaries were also loaded in as seperate layers.
 
 ## Results (if a Dashboard, insert screenshots of key selections)
 
