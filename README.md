@@ -79,7 +79,11 @@ For vacant lot density, I first loaded the data into R (I downloaded the data th
 For grocery store density, I first loaded the data into R (I downloaded the data through the Chicago Data Portal SODA API). The data was in the form of a CSV file with location data stored in a column titled 'Location'. I resaved the data as a shapefile.
 
 ### Data Visualizations
-To visualize the data, I loaded my cleaned data into QGIS as CSVs and shapefiles. Each variable had its own stylizing layer in QGIS. The basemap, census tract shapefile, and community area boundaries were also loaded in as seperate layers. I joined the Median Income and Racial Composition datai QGIS to the census tract shapefile using the GISJOIN field. The Vacant Lot Density and Grocery Store Density data was loaded in QGIS as shapefiles and I used QGIS's spatial join function to join the vacant lot point data. I used the QGIS map layout function to create PNGs of the maps at the same scale. For the racial compositon layer, I decided to use rule-based styling methods to showcase each race as a point. For the vacant lot data, I decided to represent the points as polygons based on Chicago parcels polygons using a spatial join. This allowd for a visualization of the actual lots that were vacant, not just where they were located.
+To visualize the data, I loaded my cleaned data into QGIS as CSVs and shapefiles. Each variable had its own stylizing layer in QGIS. The basemap, census tract shapefile, and community area boundaries were also loaded in as seperate layers. I joined the Median Income and Racial Composition datai QGIS to the census tract shapefile using the GISJOIN field. The Vacant Lot Density and Grocery Store Density data was loaded in QGIS as shapefiles and I used QGIS's spatial join function to join the vacant lot point data. 
+
+For the racial compositon layer, I decided to use rule-based styling methods to showcase each race as a point. For the vacant lot data, I decided to represent the points as polygons based on Chicago parcels polygons using a spatial join. This allowd for a visualization of the actual lots that were vacant, not just where they were located. Unfortunately, the spatial 
+
+I used the QGIS map layout function to create PNGs of the maps at the same spatial extent. 
 
 ## Results
 
@@ -96,7 +100,7 @@ To visualize the data, I loaded my cleaned data into QGIS as CSVs and shapefiles
 ![Vacant Lots](https://user-images.githubusercontent.com/74623945/170792888-4be7ac4a-fcef-4be3-8ab9-1a2006210e4b.png)
 
 ## Discussion of Results/Findings/Main Highlights
-The series of maps provided above highlight the importance of a multi-displinary approach when constructing spatial models. While the four variables I chose to investigate for this project are by no means meant to serve as a comprehensive moasic that captures Washington Park as a community area. Rather, these four variables 
+The series of maps provided above highlight the importance of a multi-displinary approach when constructing spatial models. While the four variables I chose to investigate for this project are by no means meant to serve as a comprehensive moasic that captures Washington Park as a community area. Rather, these four variables serve as a preliminary conceptual model to describe key features of Washington Park.
 
 ## Limitations, Future Work, Conclusion
 Despite utilizing the most up-to-date data, the accuracy of the data itself will not be 100% aligned with reality. Human error and inconsistences in data collection, anonymization techniques by the US. Census Bureau, and inaccurate self-reported information are all factors that may introduce erroneous data. However, the scale at which my analysis occurs allows for general spatial patterns, distributions, and analysis to be made soundly. 
