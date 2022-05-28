@@ -10,8 +10,8 @@ Park that considered four distinguishing features: low-income residents, racial
 homogeneity/strong black majority, municipal disinvestment, and an abundance of green space
 due to the park and prevalence of vacant lots. The objectives put forth to achieve this goal
 involved the extraction, transformation, and loading of four variables of interest related to the
-four aforementioned features respectively: median income, racial/ethnic composition, grocery
-store proximities, and vacant lot density. Through this, I was able to illustrate spatial disparities
+four aforementioned features respectively: _median income, racial/ethnic composition, grocery
+store proximities, and vacant lot density_. Through this, I was able to illustrate spatial disparities
 and characteristics of the Washington Park community area via social, economic, and
 infrastructural lenses. However, the final product of my research was a series of maps not easily
 readable nor aesthetic for general public audiences. Given the scope and implications of this
@@ -22,64 +22,66 @@ making my code open-source and accessible, I can achieve the goal of expanding u
 research toward a more accessible product.
 
 ## Background, Motivation
-
 As many Chicagoans and outsiders know, Chicago is one of the most racially/ethnically
 segregated cities in the US. Since the Great Migration, Chicago's West and South Sides have
 been torn by redlining, racial segregation, predatory lending practices, and disinvestment by the
 city. Decades of race-based discrimination made the South and West Sides unattractive to
-lenders, investors, and developers alike. As a result, the demand to live in these Black and Brown
-neighborhoods declined and those who could afford to move did. Today, many West and South
+lenders, investors, and developers alike (Greer, 2014; Hillier, 2003). As a result, the demand to live in these Black and Brown
+neighborhoods declined and those who could afford to move did (Raleigh and Galster, 2015). Today, many West and South
 Side community areas still display symptoms of this racial redlining. Moreover, the degenerative
 effects of this racialized redlining and municipal disinvestment can be observed by the
 concentration of dilapidated housing infrastructure, vacant lots, and limited food access. Thus,
 South Side community areas like Washington Park have a majority Black population that faces a
 multitude of environmental, social, economic, and health challenges.
-Data plan and definitions:
+
+### Data plan and definitions:
 Regarding data, most of my data has already been collected from my prior GIS
 assignment. The data for the four variables I’m investigating (median income, racial/ethnic
 composition, vacant lot density, and grocery store density) can be obtained through the Chicago
 Open Data Portal and 2020 US Census/American Community Survey Data. However, since
-some of the data may have changed since March, I will use API URLs to pull the most
+some of the data may have changed since March, I will use API URLs where possible to pull the most
 up-to-date data into my project. 
 
 ## Data Sources, Spatial and Temporal Scale
 
 Below I define my four variables and their respective source:
   1. Income: Median household income by census tract, 2020
-    a. From US Census 2020, extracted from [NHGIS Data Finder]([url](https://data2.nhgis.org/downloads))
+    . From US Census 2020, extracted from [NHGIS Data Finder](https://data2.nhgis.org/downloads)
   2. Racial composition: % non-Hispanic Black, 2020
-    a. From US Census 2020, extracted from [NHGIS Data Finder]([url](https://data2.nhgis.org/downloads))
+    . From US Census 2020, extracted from [NHGIS Data Finder](https://data2.nhgis.org/downloads))
   3. Vacant lot density: City-owned land inventory, 2020
-    a. [From Chicago Data Portal]([url](https://data.cityofchicago.org/Community-Economic-Development/City-Owned-Land-Inventory/aksk-kvfp))
+    . [From Chicago Data Portal](https://data.cityofchicago.org/Community-Economic-Development/City-Owned-Land-Inventory/aksk-kvfp)
   4. Grocery store density: Grocery stores, 2013
-    a. [From Chicago Data Portal]([url](https://data.cityofchicago.org/Health-Human-Services/Grocery-Store-Status/3e26-zek2))
-  5. Census tract shapefile
-    a. [From NHGIS Data Finder]([url](https://data2.nhgis.org/downloads))
-  6. Community area boundaries
-    a. [From Chicago Data Portal]([url](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6))
+    . [From Chicago Data Portal](https://data.cityofchicago.org/Health-Human-Services/Grocery-Store-Status/3e26-zek2)
+  5. Census tract shapefile, 2020
+    . [From NHGIS Data Finder](https://data2.nhgis.org/downloads)
+  6. Community area boundaries, present
+    . [From Chicago Data Portal](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6)
+  7. Chicago Property Parcels, 20210
+    . [From GeoDa Center](https://geodacenter.github.io/data-and-lab/parcels/)
     
 ## Methods Used (be explicit)
 For this project, my process can be broken into two parts: data wrangling and data visualization.
 
 ### Data Wrangling
-I primarily wrangled my data using RStudio (code provided in file titled 'code'). Each variable has its method listed below.
+I primarily wrangled my data using RStudio. Each variable has its method listed below. 
 
 #### Median Income
-For median income, I first loaded the data into R (I downloaded the data onto my local machine). 
+For median income, I first loaded the data into R (I downloaded the data onto my local machine) as a CSV file. The data was in the form of a CSV. Since the data from NHGIS includes data from all 50 states, I had to first filter my data to only include data from census tracts in Cook County. Luckily, through the NHGIS documention, I found the COUNTYA column which lists out a unique numerical code. The numerical code for Cook County is 31. After filtering out all NULL values, I saved the cleaned data to my local machine.
 
 #### Racial Composition
-For racial composition, I first loaded the data into R (I downloaded the data onto my local machine).
+For racial composition, I first loaded the data from NHGIS into R (I downloaded the data onto my local machine). The data in the form of a CSV. Similar to the median income data, I had to filter the data by the Cook County area code. 
 
 #### Vacant Lot Density
-For vacant lot density, I first loaded the data into R (I downloaded the data through the Chicago Data Portal SODA API). 
+For vacant lot density, I first loaded the data into R (I downloaded the data through the Chicago Data Portal SODA API). I then resaved the data as a shapefile.
 
 #### Grocery Store Density
-For grocery store density, I first loaded the data into R (I downloaded the data through the Chicago Data Portal SODA API). The data was in the form of a CSV file with location data stored in a column titled 'Location'. 
+For grocery store density, I first loaded the data into R (I downloaded the data through the Chicago Data Portal SODA API). The data was in the form of a CSV file with location data stored in a column titled 'Location'. I resaved the data as a shapefile.
 
 ### Data Visualizations
-To visualize the data, I loaded my cleaned data into QGIS as shapefiles. Each variable had its own stylizing layer in QGIS. The basemap, census tract shapefile, and community area boundaries were also loaded in as seperate layers.
+To visualize the data, I loaded my cleaned data into QGIS as CSVs and shapefiles. Each variable had its own stylizing layer in QGIS. The basemap, census tract shapefile, and community area boundaries were also loaded in as seperate layers. I joined the Median Income and Racial Composition datai QGIS to the census tract shapefile using the GISJOIN field. The Vacant Lot Density and Grocery Store Density data was loaded in QGIS as shapefiles and I used QGIS's spatial join function to join the vacant lot point data. I used the QGIS map layout function to create PNGs of the maps at the same scale. For the racial compositon layer, I decided to use rule-based styling methods to showcase each race as a point. For the vacant lot data, I decided to represent the points as polygons based on Chicago parcels polygons using a spatial join. This allowd for a visualization of the actual lots that were vacant, not just where they were located.
 
-## Results (if a Dashboard, insert screenshots of key selections)
+## Results
 
 ### Median Income
 ![Median Income](https://user-images.githubusercontent.com/74623945/170792854-551ae605-3314-45c0-8bc5-7333ca6f2aec.png)
@@ -94,7 +96,16 @@ To visualize the data, I loaded my cleaned data into QGIS as shapefiles. Each va
 ![Vacant Lots](https://user-images.githubusercontent.com/74623945/170792888-4be7ac4a-fcef-4be3-8ab9-1a2006210e4b.png)
 
 ## Discussion of Results/Findings/Main Highlights
-The series of maps provided above highlight the 
+The series of maps provided above highlight the importance of a multi-displinary approach when constructing spatial models. While the four variables I chose to investigate for this project are by no means meant to serve as a comprehensive moasic that captures Washington Park as a community area. Rather, these four variables 
 
 ## Limitations, Future Work, Conclusion
-Despite utilizing the most up-to-date data, the accuracy of the data itself will not be 100% with reality. 
+Despite utilizing the most up-to-date data, the accuracy of the data itself will not be 100% aligned with reality. Human error and inconsistences in data collection, anonymization techniques by the US. Census Bureau, and inaccurate self-reported information are all factors that may introduce erroneous data. However, the scale at which my analysis occurs allows for general spatial patterns, distributions, and analysis to be made soundly. 
+
+Moreover, further work should work to make the maps interactive (perhaps through an RShiny application!) and accessible online. This would greatly increase the audience and impact of my work and more deeply engage community stakeholders with the most up-to-date information. 
+
+## References
+Greer, J. L. (2014). Historic Home Mortgage Redlining in Chicago. Journal of the Illinois State Historical Society (1998-), 107(2), 204–233. https://doi.org/10.5406/jillistathistsoc.107.2.0204
+
+Hillier, A. E. (2003). Spatial analysis of historical redlining: a methodological exploration. Journal of Housing Research, 137-167.
+
+Raleigh, E., & Galster, G. (2015). Neighborhood Disinvestment, Abandonment, and Crime Dynamics. Journal of Urban Affairs, 37(4), 367–396. https://doi.org/10.1111/juaf.12102
